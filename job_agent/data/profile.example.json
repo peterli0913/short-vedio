@@ -1,0 +1,19 @@
+{
+  "full_name": "Your Name",
+  "email": "you@example.com",
+  "phone": "+852 0000 0000",
+  "target_roles": ["AI engineer", "machine learning", "data scientist", "applied scientist"],
+  "skills": ["python", "ml", "llm", "pytorch", "sql", "gcp", "manufacturing", "cdmo"],
+  "years_experience": 5,
+  "locations": ["Hong Kong", "Remote", "Kowloon"],
+  "must_have": [],
+  "avoid": ["unpaid intern", "commission only"],
+  "salary_min_hkd": 0,
+  "languages": ["English", "Mandarin", "Cantonese"],
+  "summary": "Applied AI / data person looking for an HK role with real production impact.",
+  "highlights": [
+    "Shipped internal ML tools used by a production / CDMO team",
+    "Comfortable from data wrangling through model eval and stakeholder demos",
+    "Bilingual English / Chinese"
+  ]
+}

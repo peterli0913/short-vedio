@@ -1,0 +1,19 @@
+From: Talent <hr@example.com>
+Subject: Invitation to interview — AI Engineer
+Date: Tue, 15 Sep 2026 10:00:00 +0800
+
+Hi, we would like to schedule a call to discuss the AI Engineer role.
+
+---
+From: No-Reply <noreply@jobs.example.com>
+Subject: Update on your application
+Date: Tue, 15 Sep 2026 11:00:00 +0800
+
+Unfortunately we will not be progressing your application.
+
+---
+From: Recruiter <recruiter@example.com>
+Subject: Could you send your expected salary
+Date: Tue, 15 Sep 2026 12:00:00 +0800
+
+Please provide your notice period and expected salary.
