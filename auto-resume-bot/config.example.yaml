@@ -1,0 +1,58 @@
+profile:
+  name: "李涛"
+  city_allowlist: ["Hong Kong", "HK", "香港", "香港特别行政区"]
+  salary_rmb_min: 50000
+  roles: ["智能制造", "AI运筹", "海外站点运营", "AI应用"]
+  role_keywords:
+    - "智能制造"
+    - "smart manufacturing"
+    - "运筹"
+    - "operations research"
+    - "overseas"
+    - "site operations"
+    - "AI应用"
+    - "AI application"
+    - "MES"
+    - "EBR"
+    - "machine learning"
+    - "reinforcement learning"
+    - "工业工程"
+  company_blocklist: []
+  resume_summary_path: "data/resume_summary.txt"
+
+scoring:
+  auto_min: 70
+  gray_min: 60
+  api_url: "https://api.openai.com/v1/chat/completions"
+  model: "gpt-4o-mini"
+
+currency:
+  hkd_to_cny: 0.92
+
+sources:
+  jobsdb:
+    enabled: true
+    daily_apply_cap: 30
+    search_url: "https://hk.jobsdb.com/jobs"
+  boss:
+    enabled: true
+    daily_apply_cap: 20
+    mode: "read_only"
+  careers:
+    enabled: true
+    daily_apply_cap: 20
+    urls: []
+
+browser:
+  user_data_dir: "data/browser-profile"
+  headless: false
+
+mail:
+  accounts: []
+  # example:
+  # - host: imap.163.com
+  #   user: peterdqs@163.com
+  #   password_env: IMAP_163_PASSWORD
+
+digest:
+  output_path: "data/digests"

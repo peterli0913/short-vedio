@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+config.yaml
+data/browser-profile/
+data/digests/
+*.sqlite
+.pytest_cache/
+.eggs/
+*.egg-info/
