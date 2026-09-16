@@ -39,10 +39,10 @@ def _scorer(cfg: dict):
 
 
 def _adapter(name: str, cfg: dict, profile: dict):
-    keywords = " ".join((profile.get("role_keywords") or [])[:8]) or "AI application"
+    keywords = [k for k in (profile.get("role_keywords") or []) if k] or ["AI application"]
     fx = float((cfg.get("currency") or {}).get("hkd_to_cny") or 0.92)
     if name == "jobsdb":
-        return JobsDbAdapter(keywords=keywords, pages=2, hkd_to_cny=fx)
+        return JobsDbAdapter(keywords=keywords, pages=1, hkd_to_cny=fx)
     if name == "boss":
         return BossAdapter()
     if name == "careers":

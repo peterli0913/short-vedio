@@ -33,13 +33,17 @@ class JobsDbAdapter:
 
     def __init__(
         self,
-        keywords: str = "AI application manufacturing",
+        keywords: str | list[str] = "AI application",
         pages: int = 1,
         page_size: int = 20,
         hkd_to_cny: float = 0.92,
         client: httpx.Client | None = None,
     ):
-        self.keywords = keywords
+        if isinstance(keywords, str):
+            self.queries = [keywords]
+        else:
+            self.queries = [q for q in keywords if str(q).strip()]
+        self.keywords = " ".join(self.queries)
         self.pages = pages
         self.page_size = page_size
         self.hkd_to_cny = hkd_to_cny
@@ -84,30 +88,33 @@ class JobsDbAdapter:
         return jobs
 
     def fetch_jobs(self) -> list[Job]:
-        jobs: list[Job] = []
+        """Search each keyword separately. JobsDB ANDs a long joined string to 0 hits."""
+        seen: dict[str, Job] = {}
         close = False
         client = self.client
         if client is None:
             client = httpx.Client(timeout=20.0, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
             close = True
         try:
-            for page in range(1, max(1, self.pages) + 1):
-                params = {
-                    "siteKey": "HK-Main",
-                    "keywords": self.keywords,
-                    "page": str(page),
-                    "pageSize": str(self.page_size),
-                }
-                resp = client.get(f"{SEARCH_JSON}?{urlencode(params)}")
-                resp.raise_for_status()
-                payload = resp.json()
-                for item in payload.get("data") or []:
-                    if isinstance(item, dict) and item.get("id"):
-                        jobs.append(job_from_payload(item, self.hkd_to_cny))
+            for query in self.queries:
+                for page in range(1, max(1, self.pages) + 1):
+                    params = {
+                        "siteKey": "HK-Main",
+                        "keywords": query,
+                        "page": str(page),
+                        "pageSize": str(self.page_size),
+                    }
+                    resp = client.get(f"{SEARCH_JSON}?{urlencode(params)}")
+                    resp.raise_for_status()
+                    payload = resp.json()
+                    for item in payload.get("data") or []:
+                        if isinstance(item, dict) and item.get("id"):
+                            job = job_from_payload(item, self.hkd_to_cny)
+                            seen.setdefault(job.job_key, job)
         finally:
             if close:
                 client.close()
-        return jobs
+        return list(seen.values())
 
 
 def job_from_payload(item: dict[str, Any], hkd_to_cny: float = 0.92) -> Job:
