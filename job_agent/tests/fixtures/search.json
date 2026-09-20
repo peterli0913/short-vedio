@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "advertiser": {
+        "id": "61275970",
+        "description": "Orient Overseas Container Line Ltd (OOCL)"
+      },
+      "bulletPoints": [],
+      "branding": {
+        "serpLogoUrl": "https://bx-branding-gateway.cloud.seek.com.au/605ed621-2e76-406f-9d6a-41d6ed9c511a.1/jdpLogo"
+      },
+      "classifications": [
+        {
+          "classification": {
+            "id": "6281",
+            "description": "Information & Communication Technology"
+          },
+          "subclassification": {
+            "id": "6287",
+            "description": "Developers/Programmers"
+          }
+        }
+      ],
+      "companyName": "Orient Overseas Container Line",
+      "companyProfileStructuredDataId": 408167,
+      "displayStyle": {
+        "search": "sourcrProfile"
+      },
+      "displayType": "standard",
+      "employer": {
+        "id": "408167",
+        "name": "Orient Overseas Container Line",
+        "companyId": "171088776253723",
+        "companyUrl": "https://hk.jobsdb.com/companies/orient-overseas-container-line-171088776253723"
+      },
+      "id": "94663084",
+      "isFeatured": false,
+      "listingDate": "2026-09-16T02:44:24Z",
+      "listingDateDisplay": "8m ago",
+      "locations": [
+        {
+          "label": "Science Park, Tai Po District",
+          "countryCode": "HK",
+          "seoHierarchy": [
+            {
+              "contextualName": "Science Park Tai Po District"
+            },
+            {
+              "contextualName": "Tai Po District"
+            }
+          ]
+        }
+      ],
+      "roleId": "technical-analyst",
+      "salaryLabel": "",
+      "solMetadata": {
+        "searchRequestToken": "59b0b713-4b1f-4348-ad78-beb06dddb432",
+        "token": "0~59b0b713-4b1f-4348-ad78-beb06dddb432",
+        "jobId": "94663084",
+        "section": "MAIN",
+        "sectionRank": 1,
+        "jobAdType": "ORGANIC",
+        "tags": {
+          "mordor__flights": "mordor_1054",
+          "mordor__s": "0"
+        }
+      },
+      "tags": [
+        {
+          "type": "EARLY_APPLICANT",
+          "label": "Be an early applicant"
+        }
+      ],
+      "teaser": "If you're seeking a challenging technical position that offers high level of autonomy, and a strong sense of teamwork, here comes the opportunity!",
+      "title": "Technical Analyst / AI Data Engineer",
+      "tracking": "ewogICJ0b2tlbiI6ICJhZTliNGZkMS1hM2ZiLTRjOWUtYWExMC0yZWE4YzY4OWMzYzRfMSIKfQ==",
+      "workTypes": [
+        "Full time"
+      ],
+      "workArrangements": {
+        "data": [
+          {
+            "id": "1",
+            "label": {
+              "text": "On-site"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "totalCount": 2377
+}
